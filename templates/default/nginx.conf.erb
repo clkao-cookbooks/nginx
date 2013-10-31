@@ -79,3 +79,7 @@ http {
   include <%= node['nginx']['dir'] %>/conf.d/*.conf;
   include <%= node['nginx']['dir'] %>/sites-enabled/*;
 }
+<% if node['nginx']['additional_config'] -%>
+<%= node['nginx']['additional_config'] %>
+<% end -%>
+
